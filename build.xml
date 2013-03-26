@@ -1,0 +1,23 @@
+<project name="SQL" default="compile">
+  
+  <property name="src" location="src/"/>
+  <property name="build" location="build/"/>
+
+  <target name="compile" depends="init">
+    <javac srcdir="${src}" 
+           destdir="${build}" 
+           includeantruntime="true"
+           deprecation="yes">
+      <compilerarg value="-Xlint:unchecked" />
+    </javac>
+  </target>
+    
+  <target name="init">
+    <mkdir dir="${build}"/>
+  </target>
+  
+  <target name="clean">
+    <delete dir="${build}"/>
+  </target>
+  
+</project>
